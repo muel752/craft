@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Craft - Conteúdo Minecraft</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    img.logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #00ffcc;
+      margin-bottom: 5px;
+    }
+
+    p.slogan {
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    #searchBar {
+      width: 300px;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #1a1a1a;
+      margin: 10px auto;
+      padding: 12px;
+      width: 300px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    li:hover {
+      background: #2a2a2a;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo-craft.png" alt="Logo Craft" class="logo">
+  <h1>Craft</h1>
+  <p class="slogan">Tudo sobre Minecraft em um só lugar</p>
+
+  <input type="text" id="searchBar" placeholder="Pesquisar conteúdos...">
+
+  <ul id="itemList">
+    <li>Mapa SkyBlock Infinito</li>
+    <li>Addon de Dragões</li>
+    <li>Texture Realista RTX</li>
+    <li>Mapa Aventura na Selva</li>
+    <li>Shader Leve para Celular</li>
+    <li>Pack de Skins 3D</li>
+  </ul>
+
+  <script>
+    document.getElementById('searchBar').addEventListener('keyup', function() {
+      let filter = this.value.toLowerCase();
+      let items = document.querySelectorAll('#itemList li');
+      items.forEach(function(item) {
+        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
